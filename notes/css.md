@@ -477,10 +477,11 @@ Sementic elements:
 https://rollerblade.tw/semantic-elements/
 article: not connected with below and above content
 section: strongly connected with below and above content
+often section then article
 
 <hr/>
 
-{object-fit: cover} #preventing image being distort
+{object-fit: cover} #preventing image being distort, the property is for image
 
 <hr/>
 
@@ -501,19 +502,74 @@ use live server(five server) instead of live server
 
 <hr/>
 
-Design from mobile to PC is much more easier  
-rem is prefered in project  
-padding is for creating space for the element while margin is for between elements  
-{margin:0 auto} & {max-width: 1170px;} or {width: 85vw;} is for big,div or element such as card  
-Create a div outside if creating an transform scale (preventing overflow)  
-tea-station e.g. product section is a good sample  
-when using float: consider width and margin  
-.form-control::placeholder  
-transition and hover is not a must  
-=submit form without backend: formspree website
+- Design from mobile to PC is much more easier
+- rem is prefered in project
+- padding is for creating space for the element while margin is for between elements
+- {margin:0 auto} & {max-width: 1170px;} or {width: 85vw;} is for big div (not the most outside div) or element such as card
+- Create a div outside if creating an transform scale (preventing overflow)
+- tea-station e.g. product section is a good sample
+- when using float: consider width and margin
+- change text of the input .form-control::placeholder
+- ransition and hover combination is not a must
+- submit form without backend: formspree website
 
 <hr/>
 
+Flexbox (flex container + flex items)
+
+        properties:
+        (flex container)
+        .container{display:flex}
+        .container{display:inline-flex} # it takes only the space
+        .container{flex-direction:row} # default
+        .container{flex-direction:row-reverse} #flip all the element in opposite x axis direction
+        .container{flex-direction:column}
+        .container{flex-wrap:nowrap} # default
+        .container{flex-wrap:wrap} # use it if flex container if cannot fill out all the flex items # without media query
+        .container{flex-wrap:wrap-reverse} #flip all the element in opposite y axis direction
+        .container{justify-content:flex-start} #default
+        .container{justify-content:flex-end} # move all items to the end
+        .container{justify-content:space-between}
+        .container{justify-content:space-around} #each item has space, the space between the elements are double than the margin
+        .container{justify-content:space-evenly}
+        .container{justify-content:center}
+
+        .container{align-items:stretch} # default
+        .container{align-items:flex-start}
+        .container{align-items:flex-end}
+        .container{align-items:center}
+        .container{align-items:base-line} #align if the items height are different
+
+        .container{align-content:stretch} # default
+        .container{align-content:flex-start}
+        .container{align-content:flex-end}
+        .container{align-content:center}
+        .container{align-content:space-around}
+        .container{align-content:space-between}
+
+
+
+
+
+
+        Note:
+        1. Creating a hero
+        .hero {
+                min-height:100vh;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+        }
+        h1 {
+                text-transform:uppercase;
+                font-size:60px;
+                color:red;
+        }
+        2. align-items and align-content
+        https://stackoverflow.com/questions/27539262/whats-the-difference-between-align-content-and-align-items#:~:text=align%2Dcontent%20manages%20the%20space,one%20line%2C%20they%20behave%20similarly.
+
 <hr/>
+
+Good Styling:  
 nice style: font-family:monospace
 3:57
