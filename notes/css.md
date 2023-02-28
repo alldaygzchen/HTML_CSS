@@ -546,6 +546,35 @@ Flexbox (flex container + flex items)
         .container{align-content:center}
         .container{align-content:space-around}
         .container{align-content:space-between}
+        .container{gap:1rem 2rem} #row distance column distance
+
+
+        (flex item)
+
+        .item {order:1} #all children have order 0 by default #the bigger the order, the end it will be
+
+        .item {align-self:flex-end}
+
+        .item {flex-grow:1} # it will grow, other remains the same
+
+        .item2 {flex-grow:2} .item1 {flex-grow:1} # item2 will grow faster than 2
+
+        .item2 {flex-shrink:1} #default shrink as it get smaller
+
+        .item {flex-basis:150px}
+
+        .item {flex: 1 0} #flex-grow flex-shrink flex-basis
+        e.g. if there are four item .box {flex: 0 0 25%} # the div will always divided by four
+
+        .container {
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-evenly;
+        }
+
+        .item {
+                flex: 0 0 calc(25% - 1rem)
+        } # same as gap
 
 
 
@@ -568,8 +597,37 @@ Flexbox (flex container + flex items)
         2. align-items and align-content
         https://stackoverflow.com/questions/27539262/whats-the-difference-between-align-content-and-align-items#:~:text=align%2Dcontent%20manages%20the%20space,one%20line%2C%20they%20behave%20similarly.
 
+        3. https://medium.com/@byron.skoutaris/flexbox-vs-grid-36d36ae0096e (flex is for one dimension [It is a one dimensional if there is a large div]])
+
 <hr/>
 
+Grid is for 2d dimension
+
+        Properties:
+        .container {display:grid;grid-template-columns:200px 300px} # create two columns with specific width
+        .container {display:grid;grid-template-columns:200px auto} # the second column width is auto
+        .container {display:grid;grid-template-rows:auto 5rem}
+
+        .container {display:grid;grid-template-columns:1fr 1fr} # fraction use the available space while px not
+
+        .container {display:grid;grid-gap:50px 100px} #grid-gap is absolete
+        .container {display:grid;grid-column-gap:20px}
+
+        .container {display:grid;gap:20px 5px;}
+
+
+        Note:
+        1. Example
+
+        .container {
+                min-height:100vh;
+                display:grid;
+                grid-template-columns:1fr 1fr; # fraction will calculate the available space
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-gap: 50px 100px # important
+        }
+
+<hr/>
 Good Styling:  
 nice style: font-family:monospace
 3:57
