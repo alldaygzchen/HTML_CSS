@@ -604,6 +604,7 @@ Flexbox (flex container + flex items)
 Grid is for 2d dimension
 
         Properties:
+        (Grid container)
         .container {display:grid;grid-template-columns:200px 300px} # create two columns with specific width
         .container {display:grid;grid-template-columns:200px auto} # the second column width is auto
         .container {display:grid;grid-template-rows:auto 5rem}
@@ -614,6 +615,13 @@ Grid is for 2d dimension
         .container {display:grid;grid-column-gap:20px}
 
         .container {display:grid;gap:20px 5px;}
+
+
+        (Grid items)
+        .item {
+                grid-column-start:1; # start from the first index which is one
+                grid-column-end:3; # end at the index 3
+        }
 
 
         Note:
